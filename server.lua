@@ -1,7 +1,7 @@
 --[[
     ╔═══════════════════════════════════════════════════════════════════════════╗
-    ║                    HYDRA LABS - DISCORD JOB SYNC                           ║
-    ║                         Server-Side Script                                 ║
+    ║                         QBDISCORD JOB SYNC                                ║
+    ║                         Server-Side Script                                ║
     ╚═══════════════════════════════════════════════════════════════════════════╝
 ]]
 
@@ -32,16 +32,16 @@ end)
 
 function Debug(msg, ...)
     if Config.Settings.Debug then
-        print(string.format("^3[HYDRA-GETJOB]^7 [DEBUG] " .. msg, ...))
+        print(string.format("^3[QBDISCORD]^7 [DEBUG] " .. msg, ...))
     end
 end
 
 function Log(msg, ...)
-    print(string.format("^2[HYDRA-GETJOB]^7 " .. msg, ...))
+    print(string.format("^2[QBDISCORD]^7 " .. msg, ...))
 end
 
 function LogError(msg, ...)
-    print(string.format("^1[HYDRA-GETJOB]^7 [ERROR] " .. msg, ...))
+    print(string.format("^1[QBDISCORD]^7 [ERROR] " .. msg, ...))
 end
 
 function GetDiscordId(source)
@@ -320,7 +320,7 @@ QBCore.Commands.Add('checkdiscord', 'Check a player\'s Discord roles (Admin)', {
         Notify(source, string.format("Found %d roles across all servers", count), "success")
         
         -- Print detailed info to console
-        print("^3[HYDRA-GETJOB]^7 Discord roles for " .. GetPlayerName(targetId) .. ":")
+        print("^3[QBDISCORD]^7 Discord roles for " .. GetPlayerName(targetId) .. ":")
         for serverKey, roles in pairs(allRoles) do
             print("  Server: " .. serverKey)
             for roleId, _ in pairs(roles) do
